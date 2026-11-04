@@ -38,3 +38,147 @@
 {"key": "d0e48e726a6b3ed4c19dfc998fbc45f2bb5ce8e2dad0db83925e89313fefd191", "out": "Roughly 6 working days for the full set of 14 lines."}
 {"key": "8aaa6303e1aa0f666718dee968f0fcc3c816cca4783cbbedeb2b2c6400780873", "out": "A diatom bloom got into tank 4 and spread to two more tanks, so three of the six batches were discarded [1]. Staff reseeded from isolated tank 2, and deployment slipped to November 14 [1][2]."}
 {"key": "d88a1649db6eef1b0b7c55bc76a1fc2a204c058e73f12b408f56092a12bd6d65", "out": "A diatom bloom got into tank 4 and spread to two more tanks, so four of six batches were thrown away."}
+{"key": "b54a9a655331ad48b9234baaa49424e7e4aa6093a2b8381744a3e0c7399b1ba5", "out": "{\"reason\": \"The answer gives the date 2024-03-09 and the change from 25 knots to 22 knots, matching every gold fact; the extra detail about the capsize does not contradict anything.\", \"score\": 2}"}
+{"key": "843a0e7cd38ce8126a0631e9ec394f8572031f1f2c52b3d4b7b32f03e52cb152", "out": "{\"reason\": \"The answer states 2.9 tonnes per round with Gannet at 2.0 and Skerry at 0.9, matching every fact in the gold answer without contradiction.\", \"score\": 2}"}
+{"key": "4ac9b47c80622b76d0719f6a1c5a3f124fd6da0425b1992aaa32ddef3c446c5d", "out": "{\"reason\": \"The answer correctly states 10 longlines but omits the second gold fact that the two remaining boats move 2.9 tonnes per round.\", \"score\": 1}"}
+{"key": "87dd155f563ab5b9c17b2b2fd554d7fcd6edd6d5508ce7570c274e113c42ab53", "out": "{\"reason\": \"The answer correctly identifies L10 to L14 but says they sit in the deeper end of the basin, contradicting the gold's shallower end.\", \"score\": 1}"}
+{"key": "c5ce347f164052425acfa3bc974255a9ba8dde2e5590637197476f8ce6b09f66", "out": "{\"reason\": \"The answer says the notes do not say, missing the gold facts (the Skerry, 10 kW electric outboard, about 5 hours of range).\", \"score\": 0}"}
+{"key": "0ac1734a3a277f47bb37c656b713326eb16aab4ffc700942f6521919059c40ca", "out": "{\"reason\": \"The answer states that about 20% (roughly one fifth) of the harvest goes to the drying shed, matching the gold answer without contradiction.\", \"score\": 2}"}
+{"key": "02ad26538648e521e34414c941e6790c6db4039a258aa9beb36c2cdc67c39d9b", "out": "{\"reason\": \"The answer states that staff reseeded from tank 2, which had been kept isolated, matching the gold fact, and the extra details do not contradict it.\", \"score\": 2}"}
+{"key": "076234db89958a04a60fc8b2f4db7a1f8a4a75fc60509d03cef0af03f39715d4", "out": "{\"reason\": \"The answer states both gold facts (120 m long, runs east to west) and adds a non-contradictory detail about matching the tidal current.\", \"score\": 2}"}
+{"key": "9a1359bb3778413b2056b50ffecc5cc33b3b0595a407e8a16d3c59e36c04ab47", "out": "{\"reason\": \"The answer states the diver inspects the anchors each August at a cost of $1,800, matching every fact in the gold answer without contradiction.\", \"score\": 2}"}
+{"key": "cfe0b590038a4a5b263bab85ee756fab5765fa65c5a92a88959cf83f19653acb", "out": "{\"reason\": \"The answer names Priya Nandakumar, elected January 2025, and gives the date 2025-01-18, matching all gold facts with no contradictions.\", \"score\": 2}"}
+{"key": "e22ead9d306d4cd125830f98042532f6f7d836d6baf48e18548022657073b361", "out": "{\"reason\": \"The answer says the notes do not say, so it omits the gold fact of $240 per member per year.\", \"score\": 0}"}
+{"key": "365b003eb95e4bfe1b1000120f830cb61fa1bb624d5114ec55968d482e9adc04", "out": "{\"reason\": \"The answer correctly states the diatom bloom in tank 4 spreading to two more tanks, but says four of six batches were discarded, contradicting the gold's three of six.\", \"score\": 1}"}
+{"key": "a404dbecc3e0136f183e04271c30bc693f2e9e3d8557259ce6a71cd9ccd92a55", "out": "{\"reason\": \"The answer says the notes do not say and gives none of the gold facts (about $910/month, March 2022, drying shed and lines L9 to L14).\", \"score\": 0}"}
+{"key": "7602ecdba61b6de3e601d93157b3bc544df6f2cfae8dbc0d88d98060f56b36ca", "out": "{\"reason\": \"The answer states 6 working days, contradicting the gold's roughly 4 working days, though it correctly matches the 14 lines.\", \"score\": 0}"}
+{"key": "f932de0c2a0e6519c07c248d0dc0bbc44a80872cb7d6b476579375098ef6282c", "out": "{\"reason\": \"The answer states roughly 4 working days for the full set of 14 lines, matching every fact in the gold answer with no contradictions.\", \"score\": 2}"}
+{"key": "773b95f3efc12a8807669d52ae54e0b9b665c61c93f13a097af0271e020a2893", "out": "{\"reason\": \"The answer says 35% while the gold answer says 20%, so it states the wrong share and misses the key fact.\", \"score\": 0}"}
+{"key": "b4788ce58301fea9cd302670799a9b45b52934e91aa10e0e6dac654f9fdda4a8", "out": "{\"reason\": \"The answer correctly names Eastgate Fertilizer as the buyer but omits the price of $60 a tonne, so it states only part of the gold facts.\", \"score\": 1}"}
+{"key": "933b26b722d1505c3dc79772f2d9a353ef195c9a590b231b61d9d89fae0f5df6", "out": "{\"reason\": \"The answer correctly says it reseeded from an isolated tank but names tank 5 instead of tank 2, contradicting the key gold fact.\", \"score\": 1}"}
+{"key": "44bb0e64dae81e754c28e9c41f02c8c5250a9a3ed33bf701682d9cb3802ec645", "out": "{\"reason\": \"The answer says the notes do not say and gives none of the gold facts (hull survey, keel corrosion, August 2025 retirement, scrap sale at $6,200).\", \"score\": 0}"}
+{"key": "f46d4c39240b9c6c4fcc6acba8a608accd4a7077b293ddd117e7be01ecec76cb", "out": "{\"reason\": \"The answer states both gold facts, 40 kg helical screw anchors and a 1.8 tonne pull rating each, and contradicts nothing.\", \"score\": 2}"}
+{"key": "b46d0c9d135643e60640c7128195cb9a98a30700dfcf7a82669899c142c4f303", "out": "{\"reason\": \"The answer correctly gives Priya Nandakumar and the May 18 order date but omits the finish date of May 28 (instead of June 6), so it covers only part of the gold facts.\", \"score\": 1}"}
+{"key": "4a22f2a951435de0d9edb05d1be7da782b149036aa3f579bae55a8972cdddb34", "out": "{\"reason\": \"The answer states Priya Nandakumar ordered it on May 18, and that it finished May 28 instead of the planned June 6, matching all gold facts with no contradictions.\", \"score\": 2}"}
+{"key": "e0feb2bc56722cb825839c8d812551036331563716d818cf661b435f6922facc", "out": "{\"reason\": \"The answer correctly names helical screw anchors and the 40 kg weight, but omits the 1.8 tonne pull rating that answers 'how strong'.\", \"score\": 1}"}
+{"key": "5f216a970f72a80b214c13e3ace391305cbee11bfdd797bfc18d61644ee06bed", "out": "{\"reason\": \"The answer gives the first week of November but omits the water temperature condition (below 12 \u00b0C), so it states only part of the gold facts.\", \"score\": 1}"}
+{"key": "130e6539ecf088e9d93b594a312172805d3013e6f3c59513874c0672ac227792", "out": "{\"reason\": \"The answer correctly names Priya Nandakumar but omits the election date (January 2025, January 18, 2025), so it states only part of the gold facts.\", \"score\": 1}"}
+{"key": "827bd71da02d36e3a350e526e40b0e3f95c8a482b47cfc9bc3de108ae6f308b3", "out": "{\"reason\": \"The answer says the notes do not say, so it fails to state the gold fact of 2.0 tonnes per trip.\", \"score\": 0}"}
+{"key": "bbedc1219fb23669c844552fbaf3cdb48f98de1a78f3303eae6964df228bbf1e", "out": "{\"reason\": \"The answer says the notes do not say, so it misses both gold facts (L10 to L14 and their location in the shallower end of the basin that warms first).\", \"score\": 0}"}
+{"key": "e3f57bb318dd50e0f5253108b656c22a48d0df7e3a6b604ed163cebc415df15b", "out": "{\"reason\": \"The answer states 10 longlines and that the two remaining boats move 2.9 tonnes per round, matching both gold facts with no contradictions.\", \"score\": 2}"}
+{"key": "2fd0fcc2cdedc90b769913595d703563096fd5cc791fb65a4285692783bb8be8", "out": "{\"reason\": \"The answer gives 3.4 tonnes with Skerry at 1.4, contradicting the gold total of 2.9 tonnes and Skerry at 0.9; only Gannet's 2.0 matches.\", \"score\": 0}"}
+{"key": "f608c1ab331d76829a7e9c3f5b54bc4c78409d98a889526d53b7183c34566142", "out": "{\"reason\": \"The answer gives the correct length of 120 m but omits the east-to-west direction stated in the gold answer.\", \"score\": 1}"}
+{"key": "3f87ca26e4c9d0950970b835afb2441e648bc84afdf130ff9a852970308fbf3d", "out": "{\"reason\": \"The answer correctly states a diver inspects the anchors every August but omits the $1,800 cost, so it covers only part of the gold facts.\", \"score\": 1}"}
+{"key": "e73c20bd1f7d3fac3cb79a1cbf79ee87a876f75c51f89f1a3f978d1dd2802ba9", "out": "{\"reason\": \"The answer states that Eastgate Fertilizer buys the offcuts at $60 a tonne, matching both gold facts, and the extra 5% detail does not contradict anything.\", \"score\": 2}"}
+{"key": "cf8c22a72e95356a192ef693b47a1dd44221bca1510bb580f203dd3749b0a620", "out": "{\"reason\": \"The answer states both gold facts (first week of November, water below 12 \u00b0C) and adds a non-contradictory detail about 2025 deployment on November 4.\", \"score\": 2}"}
+{"key": "817d74c44702c4f67dcc746366a235848427f1f38c26d3772cd7f6b260587668", "out": "{\"reason\": \"The answer gives the correct date (March 9, 2024) but omits the change from 25 knots to 22 knots, so it states only part of the gold facts.\", \"score\": 1}"}
+{"key": "f21551bc0376ea12f781b35b418f873e863825aa24e2a18fe9b42e5cfe7b7d0c", "out": "{\"reason\": \"The answer states the $85,000 Northline Credit Union loan from March 2022 and the 600 kg per day dehydrator capacity, matching all gold facts without contradiction (extra loan details are not contradicted).\", \"score\": 2}"}
+{"key": "101d7545c7075f6848a67aabed15ea1a6e4df084ab673cbd23a940cc6e972f1b", "out": "{\"reason\": \"The answer states all gold facts (diatom bloom entered tank 4, spread to two more tanks, three of six batches discarded) and adds extra detail about reseeding and deployment delay that does not contradict the gold.\", \"score\": 2}"}
+{"key": "381bf119d7c26052755d11a227e6ea991e5ae625443c6afdc9c5078ef5848b9a", "out": "{\"reason\": \"The answer states both gold facts, that L10 to L14 warm first in spring and that they sit in the shallower end of the basin, with no contradictions.\", \"score\": 2}"}
+{"key": "11dfbd495cde340de52b00d9bd1b81536e592a0020b9ba4284ffb71ec18fad8a", "out": "{\"reason\": \"The answer says the notes do not say, so it states none of the gold facts (4.1 tonnes wet weight in spring 2020, sold at $350 a tonne).\", \"score\": 0}"}
+{"key": "bfd030c61ad3060c9041504074e9e982c98ee70d4690bf8c5872c9668e41ac1c", "out": "{\"reason\": \"The answer says the notes do not say, so it omits the gold fact that changing the bylaws requires two thirds of the members present.\", \"score\": 0}"}
+{"key": "9fa5ab6f2bfcfa9f6974ea42b1deb34461030bc6b61958a1cbff468088ee0ccf", "out": "{\"reason\": \"The answer correctly identifies the $85,000 Northline Credit Union loan but omits the dehydrator's 600 kg/day wet kelp capacity (and the March 2022 date), so it states only some of the gold facts.\", \"score\": 1}"}
+{"key": "13f0dfb6a8f0e0b8d8d8017bd631372de7f86aecdb7425e2002fd26580abb32f", "out": "{\"winner\": \"B\"}"}
+{"key": "ad0fb401b27638901557d6bb7ba1e37b178c70914aa17cf4aac9965613ce4ec2", "out": "{\"winner\": \"B\"}"}
+{"key": "0679ca012e541681353bd36f58c4f68192811989ff7b70860506d3a10d8e8fdb", "out": "{\"winner\": \"A\"}"}
+{"key": "300e66433d9b37af5a0173bf559e0292239db2524b1a9986a1ebae9570bbbdb5", "out": "{\"winner\": \"A\"}"}
+{"key": "e1d3da6e1b9a789f2161f25d0fdd32d771a994b63bb7d4a3e2aa8474b07b04a1", "out": "{\"winner\": \"A\"}"}
+{"key": "20a6ca1177624e88dec7c7f0546110d515e3f131b95e861ae796ae6a28b56047", "out": "{\"winner\": \"B\"}"}
+{"key": "5f0908b5576fda8ebeb86450a61785e446ce23df86ce670e19bc00e529b1e276", "out": "{\"winner\": \"B\"}"}
+{"key": "e53143b1b6729b1df3419a0478713815f6df914cdb02edcbb31e44955978077f", "out": "{\"winner\": \"A\"}"}
+{"key": "a60d1db3dad2854f1c1c9f4b96aa798c3197212f5f8ce365818d1fafd1d9fd28", "out": "{\"winner\": \"A\"}"}
+{"key": "2d562fb73c17829d2cc19c653ea61d9149706dfe929a505f54b3e60b863bed3d", "out": "{\"winner\": \"B\"}"}
+{"key": "4147fd19086f11d7063dc950be82ac095a20dfe4635bfe1ca70d3049cae91c62", "out": "{\"winner\": \"A\"}"}
+{"key": "092a3f1d8a5d1c6e34707fe3689bdea7f31e0ad3678cf1bb02fb7600cd6e0265", "out": "{\"winner\": \"A\"}"}
+{"key": "cdba6d5c3ff63005fdc44393442dd583fecddb915fdd42af086e60a84873e9f1", "out": "{\"winner\": \"B\"}"}
+{"key": "81b9b7dfb39c5024489bc2f90761543c218dcdc21cc8c46e121c9a5a0391b25f", "out": "{\"winner\": \"B\"}"}
+{"key": "ab7ee2c42981fe659670b8d33c192b037b63c02ae7d88296c2c6fb61d9b7963d", "out": "{\"winner\": \"B\"}"}
+{"key": "efeed44ad74d7d3a7badb06dfc073f276e67aaf0df095ee917094a9696d271b2", "out": "{\"winner\": \"A\"}"}
+{"key": "7b14a37433309b3a0bbb628c0762d3e22fdf8ab8667741e2449c62bd5d0d0f9e", "out": "{\"winner\": \"A\"}"}
+{"key": "821fe3124880d7df193f415a314a2eddd9ac12c3db40ab3ab09fee37e0944ebb", "out": "{\"winner\": \"A\"}"}
+{"key": "bd63cd923d2458d2e4de3752f05d02f99a104527375a8ce711ea4e9146a38336", "out": "{\"winner\": \"B\"}"}
+{"key": "f9257014c05e709fc745f9e22ab297368f2e969a0b9567187cb9d4499f8f635e", "out": "{\"winner\": \"B\"}"}
+{"key": "e24a22b3c012b5f9abfcce55b4fd00a7278881b66a634ce5f02b772ef7a6cf76", "out": "{\"winner\": \"A\"}"}
+{"key": "1d663434a7a75d1d8fcf370465ccc5237760ee902c1ead567f637888ba100b01", "out": "{\"winner\": \"B\"}"}
+{"key": "9ee312f4d51a56d87cb2787af575e94abe6c5b91d782036c827cd60f88359089", "out": "{\"winner\": \"B\"}"}
+{"key": "edebcc3e21ecd98d7e73a1df9bc53546976935794ac7c3efc0c84092243c5b26", "out": "{\"winner\": \"A\"}"}
+{"key": "758aedd6b6a6a9ca7c6e1824394de6c78f510ade19a209a66c18eeb36df8b0da", "out": "{\"winner\": \"B\"}"}
+{"key": "a5eb9eab8a879eef7601712027008549c70c19b75627bba03a7b58096294d481", "out": "{\"winner\": \"A\"}"}
+{"key": "5e319953795ec338f0a0dd6bb9e5fcd96c0ad0c37ab12a6e327f1e36259b4484", "out": "{\"winner\": \"B\"}"}
+{"key": "4584ca43712e442c6d4eb510246daf3f3bebfdf40889a4f43d31f65d421faddf", "out": "{\"winner\": \"B\"}"}
+{"key": "6b6b9bddb0f3cef63f220050a8761a37d0cd67511caaf6a28b59147201e96c5e", "out": "{\"winner\": \"A\"}"}
+{"key": "7e457570716bc2a8d3312930cbcf019b6247fd45a07ee4a8e3b006495e981caf", "out": "{\"winner\": \"A\"}"}
+{"key": "084a7423ff7e3fa9265d73609f814d9ea1ecc7a8464f97d1f8223a54eee141b5", "out": "{\"winner\": \"B\"}"}
+{"key": "041980ccd8cab0100a8b9f8cebf1321811473cd3208eb9db3b55155122ca05f4", "out": "{\"winner\": \"A\"}"}
+{"key": "fb4014e754cc5bb1582dd5de2ae0035f8a0133215207eae9ae8734d4c32150f8", "out": "{\"winner\": \"B\"}"}
+{"key": "1ad57a8d6c6625360bb0af158e4372edbfa64c688c14b2473a85ab8c037f4ee9", "out": "{\"winner\": \"A\"}"}
+{"key": "703a154e9e02a31be5060c4f26aea8b90c6806e84fa6332de1f18e4dd7bc8106", "out": "{\"winner\": \"A\"}"}
+{"key": "a8620043bf43c89d3543e9eecffccc0cd01dbf3a1767b488d4b271676d8c52f9", "out": "{\"winner\": \"B\"}"}
+{"key": "d77085239c359510a4dbeda57857e11d8088e4c121b9050726dd3b46e6fa72a3", "out": "{\"winner\": \"B\"}"}
+{"key": "a3ad1300f64f96393a107d86636e0e4bf2161b8d312aa868f3b794b2a4f5ce5a", "out": "{\"winner\": \"A\"}"}
+{"key": "c89f7e97c62882468221fdc6bad0bfbe88fbdf001606b7e792e53181511ffcbc", "out": "{\"winner\": \"A\"}"}
+{"key": "ea18be7aea99bc0bfdaaaa46b18f7139de7819fb2be9d6b39163e56b9149b8e1", "out": "{\"winner\": \"B\"}"}
+{"key": "a3a1cce7ec3445a644e1d7f1c20df5cc4a0682f44d858c10bfea7e6604d00531", "out": "{\"winner\": \"A\"}"}
+{"key": "3322bf19f74037f7df9f382cedba07c14fcf8b3aefa953f8df5bcb09130f41d4", "out": "{\"winner\": \"B\"}"}
+{"key": "a1a99f680962db9e1cbdaa2d9245a19274a548c572b1db240ad97afeaecedb94", "out": "{\"winner\": \"B\"}"}
+{"key": "6cb30d703966069d7f860fca092192b0e43c5030997f97c6bc33c2ab7acee8de", "out": "{\"winner\": \"B\"}"}
+{"key": "e2035ca9e6f119b20905c3f3ec886d2195a30538bf4b7e4c7b397931b5d1e6de", "out": "{\"winner\": \"B\"}"}
+{"key": "9d55a51bfc2125383268a0a0fe0720f3cb281f52fce6ef5ee87e65794fe2000f", "out": "{\"winner\": \"A\"}"}
+{"key": "ea67792d9ac9fcee4808b54506454a070bba40bc7e568f48af42d311ee749756", "out": "{\"winner\": \"A\"}"}
+{"key": "61db610f5ac64b576689efdc013c08467324fb88729bc31593ec51f71f964b74", "out": "{\"winner\": \"A\"}"}
+{"key": "3ba245ad417923db7ff22419794b8461af3e6d5820a7a3e0d4ec1c7b1e60dfee", "out": "{\"winner\": \"B\"}"}
+{"key": "3c7c3176ebb7b9ce64fce24fa3b878e823e9e75c89a66dd8a73ff6d80f4d09ec", "out": "{\"winner\": \"A\"}"}
+{"key": "6b6defa4ac217be879cc89c5ed7efb099182f01a8471fbb208bb5b77578a8291", "out": "{\"winner\": \"A\"}"}
+{"key": "d96833502a4f0ced2ef24bf507b5cd1d81b79182a066d3845d9d1d4e6149eaef", "out": "{\"winner\": \"A\"}"}
+{"key": "937b7c0f5d9f2460272bf223e16783bdb93ec92ee97186e23167d0c690fe7ab0", "out": "{\"winner\": \"A\"}"}
+{"key": "8ed13ecb80f7e6e5eac1a3b9609f9a0aa67eb6d4f1d4342b89ec8770ca4c22b9", "out": "{\"winner\": \"B\"}"}
+{"key": "bc12cb068ad2877267f83c18961353c95961ca3e62e868dd6efe1a853fa511ca", "out": "{\"winner\": \"A\"}"}
+{"key": "86fcdb84e540ab3ab9c826777b919c3d1d118f103f53d9950d9ebf2b5f9d20e2", "out": "{\"winner\": \"B\"}"}
+{"key": "594289275f558e9b6a4b8c09cfc30162ee5bb838c3bd9637fb91c756a9dc54ae", "out": "{\"winner\": \"B\"}"}
+{"key": "4a915a81ccdea3e6ff013dcbc6f8c2d0f9867c26b73ba374af9f3088e7f442b4", "out": "{\"winner\": \"B\"}"}
+{"key": "8aca328754c06be7f75e62a516f984db63332943b0bd20407e31d7fa6ae295d3", "out": "{\"winner\": \"A\"}"}
+{"key": "360090b71cfec911611e86cc99b330e48ff6230dae580706072302cf9655ec07", "out": "{\"winner\": \"A\"}"}
+{"key": "b3683c375120cc71bbe3268830d36b30e8e29c12f9dd6cfe100eb738f7424e93", "out": "{\"winner\": \"B\"}"}
+{"key": "f1d7ad0b1e98a26f4e5e4e20d63395bab38d88d0323ce4a06656e57c2c04c721", "out": "{\"winner\": \"B\"}"}
+{"key": "042befb6768e6bc297d2cff05bd0437fe61d61b322d291aca7469aa25da71305", "out": "{\"winner\": \"B\"}"}
+{"key": "e665c3e9fc2579cfe00a56407e843f8de5f748c54cba3e20aafccab9616d9391", "out": "{\"winner\": \"A\"}"}
+{"key": "9e0452b7dc28a0cbba51f146cec9a8be17dc3432f0321ed91ee3e86a338966d5", "out": "{\"reason\": \"The answer correctly states 10 longlines but omits the second gold fact that the two remaining boats move 2.9 tonnes per round.\", \"score\": 1}"}
+{"key": "e15b792e1d104fda482c5508f8d203917df5160cfbe97cdcfbdb7cd75d08d59c", "out": "{\"reason\": \"The answer states 2.9 tonnes total from Gannet (2.0) and Skerry (0.9), matching all gold facts with no contradictions.\", \"score\": 2}"}
+{"key": "1c7549130f4580ce983cd0748bd0a07c49e261ae9e5a41601b08d8098c130cc5", "out": "{\"reason\": \"The answer says the notes do not say, missing the gold facts (the Skerry, 10 kW electric outboard, about 5 hours of range).\", \"score\": 0}"}
+{"key": "55085119f7d74ac88490fb0199327e8d893d9e5bd2febfe33cfd78c26b356366", "out": "{\"reason\": \"The answer states that staff reseeded from tank 2, which had been kept isolated, matching the gold fact, and the extra details do not contradict it.\", \"score\": 2}"}
+{"key": "7692435b932fe8d57a4bc6639d6ad11bb1a540529ea6de3e2c7db8d67d7ef40b", "out": "{\"reason\": \"The answer correctly identifies L10 to L14 but contradicts the gold by saying they sit in the deeper end of the basin rather than the shallower end.\", \"score\": 1}"}
+{"key": "ada810337e59999b657d21a9507214a1831db187126e073487c62124d59aa49b", "out": "{\"reason\": \"The answer states both gold facts (120 m long, runs east to west) and contradicts nothing; the added tidal current detail and filler do not conflict.\", \"score\": 2}"}
+{"key": "179a9690ab919a6c0366252a34e02937f4bc126d26295726c5fa4386d8546bef", "out": "{\"reason\": \"The answer states that about 20% (roughly one fifth) of the harvest goes to the drying shed, matching the gold answer, and contradicts nothing.\", \"score\": 2}"}
+{"key": "f448f30d4b740391806511e16922079c60b3277c57c69a4c5efde6e39eeffc7d", "out": "{\"reason\": \"The answer states roughly 4 working days for the full set of 14 lines, matching the gold answer exactly, and the extra filler text contradicts nothing.\", \"score\": 2}"}
+{"key": "962b2108f69f389cdb40ad7020088bf5df3b61555bceac29d7d3ea445becb1e4", "out": "{\"reason\": \"The answer states the date as 2024-03-09 and the change from 25 knots to 22 knots, matching the gold answer; the extra detail about the Skerry capsize does not contradict it.\", \"score\": 2}"}
+{"key": "12da437c30fc429ddc2176bee8a599329a0df354e8976e3ee6a61dce7afe7451", "out": "{\"reason\": \"The answer says the notes do not say and gives no monthly payment (~$910) or purpose (drying shed and lines L9-L14, March 2022), so it misses all gold facts.\", \"score\": 0}"}
+{"key": "efb183c089804694a5a11f836b44db579c645c5c68ca0a0332dd4d1fef2168a2", "out": "{\"reason\": \"The answer says the notes do not say and never states the $240 per member per year figure from the gold answer.\", \"score\": 0}"}
+{"key": "1aa3fca2133e0ff4db49173c02770b19bcef88f9e96fc7b821fb8f6882a8c592", "out": "{\"reason\": \"The answer correctly states the diatom bloom in tank 4 spreading to two more tanks, but says four of six batches were thrown away, contradicting the gold's three of six.\", \"score\": 1}"}
+{"key": "31e141130eb5a206ace03b2c1694b6992f6302ba66fee06fc68a030ccbeb684b", "out": "{\"reason\": \"The answer names Priya Nandakumar, elected January 2025, and gives the date 2025-01-18, matching all gold facts with no contradictions.\", \"score\": 2}"}
+{"key": "e6a494221bcddff60fc8c51b4208699f9329aef11ad75a27caf4f41f31a1e2ac", "out": "{\"reason\": \"The answer states roughly 6 working days for the 14 lines, contradicting the gold figure of roughly 4 working days, so the key fact is wrong.\", \"score\": 0}"}
+{"key": "a0edde97e46f4d98a241b72cca6c78aadb2676e6c70811e28aa6cc67285955c1", "out": "{\"reason\": \"The answer states that a diver inspects the anchors each August at a cost of $1,800, matching all gold facts without contradiction.\", \"score\": 2}"}
+{"key": "40085ce79cab236322dce6526338b0acf0144dcbc13d440b55dfaffc491d264c", "out": "{\"reason\": \"The answer correctly names Eastgate Fertilizer as the buyer but omits the $60 a tonne price, so it states only part of the gold facts.\", \"score\": 1}"}
+{"key": "e72bfff49a190aa783a262ecf6f1091219aac77933ad52772edae5acf88b0f33", "out": "{\"reason\": \"The answer states 35% for the drying shed, which contradicts the gold answer of 20%.\", \"score\": 0}"}
+{"key": "e23f0ca9f7cb1715447901c7c9b70df1cc330112f53234d0c9ad2d00880393aa", "out": "{\"reason\": \"The answer says the notes do not say and gives none of the gold facts (hull survey, keel corrosion, August 2025 retirement, scrap sale at $6,200).\", \"score\": 0}"}
+{"key": "0d97539c198d50971c14653b1422f924358f6f0eb9984b00b5e73793b6fd033c", "out": "{\"reason\": \"The answer says the notes do not say, and states none of the gold facts (L10 to L14, shallower end of the basin that warms first).\", \"score\": 0}"}
+{"key": "3c08c6f24660b0901a11880695cadba4d6914b95395075eb4bb54c1693f9bb88", "out": "{\"reason\": \"The answer correctly states that Priya Nandakumar ordered the early harvest on May 18 but omits the finish date of May 28 (instead of June 6).\", \"score\": 1}"}
+{"key": "4436cea8f6cd3209ad1eb601e13c920eb202082e2c0ea5c4ef04ac22c5b28b1b", "out": "{\"reason\": \"The answer says it reseeded from tank 5, contradicting the gold's tank 2, though it correctly notes the tank had been kept isolated and that reseeding was the recovery method.\", \"score\": 1}"}
+{"key": "bb13c771f3da03a4373dc282dcc3273fc95c4e12f1e1516ff12400150f510f67", "out": "{\"reason\": \"The answer states Priya Nandakumar ordered it on May 18 and it finished May 28 instead of June 6, matching all gold facts with no contradictions.\", \"score\": 2}"}
+{"key": "d65fbfa2b65f8694b754233f23b41abc898e0910c44c8f1c4db3c3a899f49542", "out": "{\"reason\": \"The answer states that both ends are held by 40 kg helical screw anchors each rated for a 1.8 tonne pull, matching the gold answer fully with no contradictions.\", \"score\": 2}"}
+{"key": "5d079b50c621fe0bfc6b3d93a1a6bc600ad55ff31a6b6e35a17029fc6a402ccd", "out": "{\"reason\": \"The answer correctly identifies helical screw anchors at 40 kg but omits the 1.8 tonne pull rating, which is a key gold fact.\", \"score\": 1}"}
+{"key": "eb2e6eed6e32427e3cde23ccff814dc3c98c5c351255697d889e7f71bee83deb", "out": "{\"reason\": \"The answer states the 120 m length correctly but omits the east-to-west direction, so it covers only part of the gold facts.\", \"score\": 1}"}
+{"key": "4f428ce70e66f7f2354fc043a2f55ef8f9173461744d97f853bf53a3c2a0c2b2", "out": "{\"reason\": \"The answer gives the first week of November but omits the water temperature condition (below 12 \u00b0C), so it states only some of the gold facts.\", \"score\": 1}"}
+{"key": "8687c2896882767b646ed5363905d4cb16bbf1e28957af5b31233d0f2bda2855", "out": "{\"reason\": \"The answer gives 3.4 tonnes with Skerry at 1.4, contradicting the gold total of 2.9 tonnes with Skerry at 0.9, though Gannet's 2.0 matches.\", \"score\": 1}"}
+{"key": "1e4a722a5675e0bd5bfff1fe9d55eb48b5acc178c776801fcda908993c5a5f07", "out": "{\"reason\": \"The answer correctly names Priya Nandakumar as president but gives no election date, missing the January 2025 (January 18, 2025) fact.\", \"score\": 1}"}
+{"key": "6d2939bff15a591a86ec6f9994f02d4e9668edbdd695be35608259694baf4e87", "out": "{\"reason\": \"The answer states 10 longlines and 2.9 tonnes per round for the two remaining boats, matching both gold facts without contradiction.\", \"score\": 2}"}
+{"key": "7039daf7694d52aab47f0b646311bdda40dcf43d5e4b987cefc8de3cdb81ff0a", "out": "{\"reason\": \"The answer says the notes do not say and never states the gold fact of 2.0 tonnes per trip.\", \"score\": 0}"}
+{"key": "ccdbed99787075ccbdc7bb50b10d59efe35bc5221a477d67121fe08aea413227", "out": "{\"reason\": \"The answer states that Eastgate Fertilizer buys the offcuts at $60 a tonne, matching both gold facts, and the extra 5% detail does not contradict anything.\", \"score\": 2}"}
+{"key": "bde3deea646ea5b464f4f2303ffa73c2bdf6162179103bbe0187e321367f34df", "out": "{\"reason\": \"The answer states both gold facts (first week of November, water below 12 \u00b0C) and the extra 2025 detail does not contradict them.\", \"score\": 2}"}
+{"key": "3334a5c102df20c670532a3ad6107953372d31163b2affe7906c58f590f4f6b3", "out": "{\"reason\": \"The answer correctly states a diver inspects the anchors every August but omits the $1,800 cost, so it covers only part of the gold facts.\", \"score\": 1}"}
+{"key": "f1c6845a2bd2a5a38a065c669a4e98f3a0acc363bfc5a6d6a694c1e92a3865c4", "out": "{\"reason\": \"The answer states all gold facts (diatom bloom entered tank 4, spread to two more tanks, three of six batches discarded) and adds extra details (reseeding from tank 2, deployment slipping to November 14) that do not contradict the gold.\", \"score\": 2}"}
+{"key": "c0cf45ee18715fd1255cc1e63f20c8e074aa2b3f3ce96256161a05eae43e47a3", "out": "{\"reason\": \"The answer gives the correct date (March 9, 2024) but omits the gold's from/to values (25 knots to 22 knots), so only part of the gold facts are stated.\", \"score\": 1}"}
+{"key": "84a64c25839a087b4436f1d34fb4a0f9cd4ffb5f9f6f774f06f72b9f82051771", "out": "{\"reason\": \"The answer says the notes do not say and never states the two-thirds-of-members-present requirement from the gold answer.\", \"score\": 0}"}
+{"key": "2e3bb93250b97df1fc5c0b20f1cf050bf5bf141024e83e1bc6a354536b497cfd", "out": "{\"reason\": \"The answer states the $85,000 Northline Credit Union loan from March 2022 and the 600 kg/day wet kelp capacity, matching all gold facts with no contradictions (extra loan details are additional).\", \"score\": 2}"}
+{"key": "aed29976fae0e5de21e97f98b152127e558d00e0355ade95a506439cfa12d5d7", "out": "{\"reason\": \"The answer correctly identifies the $85,000 Northline Credit Union loan but omits the dehydrator's 600 kg/day wet kelp capacity (and the March 2022 date), so it states only part of the gold facts.\", \"score\": 1}"}
+{"key": "316f80ccd502af9a1bdc72dedb42bbfc96e946d9c2b6843bfb2015b8242a92ee", "out": "{\"reason\": \"The answer says the notes do not say, and gives neither the 4.1 tonnes wet weight nor the $350 a tonne price from the gold answer.\", \"score\": 0}"}
+{"key": "11b1c93c3f0ce1fe6b9528b58942b61a18ae66030d7653c70ca983ef62f9ff51", "out": "{\"reason\": \"The answer states L10 to L14 in the shallower end of the basin as first to warm in spring, matching every fact in the gold answer without contradiction.\", \"score\": 2}"}
