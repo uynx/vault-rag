@@ -3,6 +3,7 @@ import json
 import subprocess
 import tempfile
 import threading
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 CLAUDE = ["claude", "-p", "--model", "sonnet", "--setting-sources", "project", "--disable-slash-commands",
@@ -43,3 +44,8 @@ def cached(llm, path: Path, model: str, offline: bool = False):
         return out
 
     return call
+
+
+def pmap(fn, items, workers: int = 8) -> list:
+    with ThreadPoolExecutor(workers) as ex:
+        return list(ex.map(fn, items))
