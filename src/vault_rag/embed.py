@@ -7,6 +7,7 @@ from .retrieval import QUERY_PREFIX
 
 MODEL = "BAAI/bge-small-en-v1.5"
 CACHE = Path.home() / ".cache" / "vault-rag"
+SLICE = 256
 
 
 class FastEmbedder:
@@ -19,6 +20,9 @@ class FastEmbedder:
     def __call__(self, texts: list[str], query: bool = False) -> np.ndarray:
         if query:
             texts = [QUERY_PREFIX + t for t in texts]
+        return np.vstack([self._slice(texts[i : i + SLICE]) for i in range(0, len(texts), SLICE)])
+
+    def _slice(self, texts: list[str]) -> np.ndarray:
         key = hashlib.sha256("\0".join([self.model_name, *texts]).encode()).hexdigest()
         path = self.cache / "vectors" / f"{key}.npy"
         if path.exists():
