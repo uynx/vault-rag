@@ -1,37 +1,12 @@
 import json
 
 import pytest
-from fakes import fake_embed
+from fakes import QUESTIONS, fake_embed
 
 from vault_rag.cli import main
 from vault_rag.corpus import load_corpus
 from vault_rag.evalrun import answer_metrics, load_questions, markdown_table, retrieval_metrics
 from vault_rag.retrieval import Retriever
-
-NOTES = {
-    "boats": "# Boats\n## Fleet\nThe Gannet hauls two tonnes per trip.\n",
-    "buyers": "# Buyers\n## Split\nCorvane takes sixty percent of each harvest.\n",
-    "nursery": "# Nursery\n## Setup\nSix tanks grow gametophytes under blue light.\n",
-}
-QUESTIONS = [
-    {"id": "q1", "type": "lookup", "question": "how many tonnes does the Gannet haul", "gold_sources": ["boats"],
-     "gold_answer": "Two tonnes."},
-    {"id": "q2", "type": "lookup", "question": "which buyer takes sixty percent", "gold_sources": ["buyers"],
-     "gold_answer": "Corvane."},
-    {"id": "q3", "type": "paraphrase", "question": "xyzzy", "gold_sources": ["nursery"], "gold_answer": "Six tanks."},
-]
-
-
-@pytest.fixture
-def vault(tmp_path):
-    corpus = tmp_path / "corpus"
-    corpus.mkdir()
-    for name, text in NOTES.items():
-        (corpus / f"{name}.md").write_text(text)
-    qpath = tmp_path / "q.jsonl"
-    qpath.write_text("\n".join(json.dumps(q) for q in QUESTIONS))
-    return tmp_path
-
 
 def test_load_questions_reads_jsonl(vault):
     assert [q["id"] for q in load_questions(vault / "q.jsonl")] == ["q1", "q2", "q3"]
