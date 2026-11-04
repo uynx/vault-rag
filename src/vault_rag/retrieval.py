@@ -52,3 +52,30 @@ def rrf(rankings: list[np.ndarray], k: int = 60) -> np.ndarray:
     for r in rankings:
         fused[r] += 1.0 / (k + 1 + np.arange(len(r)))
     return np.argsort(-fused, kind="stable")
+
+
+METHODS = ("bm25", "dense", "hybrid")
+
+
+class Retriever:
+    def __init__(self, chunks, embed):
+        texts = [c.text for c in chunks]
+        self.chunks = chunks
+        self.bm25 = BM25(texts)
+        self.dense = Dense(texts, embed)
+
+    def rank(self, query: str, method: str = "hybrid") -> np.ndarray:
+        if method not in METHODS:
+            raise ValueError(f"method must be one of {METHODS}, got {method!r}")
+        order = lambda s: np.argsort(-s, kind="stable")
+        if method == "bm25":
+            return order(self.bm25.scores(query))
+        if method == "dense":
+            return order(self.dense.scores(query))
+        return rrf([order(self.bm25.scores(query)), order(self.dense.scores(query))])
+
+    def search(self, query: str, method: str = "hybrid", k: int = 5):
+        return [self.chunks[i] for i in self.rank(query, method)[:k]]
+
+    def rank_notes(self, query: str, method: str = "hybrid") -> list[str]:
+        return list(dict.fromkeys(self.chunks[i].note for i in self.rank(query, method)))
