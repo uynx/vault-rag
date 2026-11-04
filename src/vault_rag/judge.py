@@ -59,19 +59,29 @@ def pad(answer: str) -> str:
     return answer + PAD
 
 
+def wilson(k: int, n: int, z: float = 1.96) -> tuple[float, float]:
+    p = k / n
+    centre = p + z * z / (2 * n)
+    spread = z * (p * (1 - p) / n + z * z / (4 * n * n)) ** 0.5
+    return (centre - spread) / (1 + z * z / n), (centre + spread) / (1 + z * z / n)
+
+
 def validate(human: list[int], judge: list[int]) -> dict:
     n = len(human)
     confusion: dict[str, Counter] = defaultdict(Counter)
     for h, j in zip(human, judge):
         confusion[str(h)][str(j)] += 1
     hb, jb = [h == 2 for h in human], [j == 2 for j in judge]
-    return {"n": n, "agreement": sum(h == j for h, j in zip(human, judge)) / n,
+    agree = sum(h == j for h, j in zip(human, judge))
+    return {"n": n, "agreement": agree / n, "agreement_ci95": wilson(agree, n),
             "kappa_3class": cohen_kappa(human, judge),
             "binary_agreement": sum(h == j for h, j in zip(hb, jb)) / n, "kappa_binary": cohen_kappa(hb, jb),
             "confusion": {h: dict(c) for h, c in confusion.items()}}
 
 
 def position_bias(llm, pairs, workers: int = 8) -> dict:
+    if not pairs:
+        return {"n": 0}
     prompts = [pair_prompt(q, g, a, b)
                for q, g, good, bad in pairs for a, b in ((good, bad), (bad, good))]
     wins = pmap(lambda p: parse_winner(llm(p)), prompts, workers)

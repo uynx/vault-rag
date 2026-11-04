@@ -41,3 +41,15 @@ def test_eval_with_answers_gates_on_cached_llm_offline(vault):
     assert set(base) == {f"{g}/{m}" for g in ("retrieval", "answers") for m in ("bm25", "dense", "hybrid")}
     assert main(args(vault, "eval", "--answers", "--offline", "-k", "2"), embed=fake_embed, llm=None) == 0
     assert (vault / "out" / "answers_hybrid.jsonl").exists()
+
+
+def test_judge_markdown_survives_a_run_with_no_pairs():
+    from vault_rag.cli import judge_markdown
+
+    v = {"n": 1, "agreement": 1.0, "agreement_ci95": (0.2, 1.0), "kappa_3class": 1.0, "binary_agreement": 1.0,
+         "kappa_binary": 1.0, "confusion": {}}
+    out = {"validation": v, "validation_by_origin": {"generated": v}, "n_pairs": 0, "position": {"n": 0},
+           "position_padded_bad": {"n": 0}, "length": {"n": 1, "mean_delta": 0.0, "pct_raised": 0.0, "pct_lowered": 0.0,
+                                                      "wrong_promoted": None, "spearman_len_score": None,
+                                                      "spearman_within_label": {}}}
+    assert "no pair has both" in judge_markdown(out)

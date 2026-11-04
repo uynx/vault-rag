@@ -47,5 +47,16 @@ def test_run_check_validates_judge_and_runs_both_bias_checks():
     assert out["validation"]["n"] == 4 and out["validation"]["kappa_binary"] == 1.0
     assert out["position"]["n"] == 2 and out["position"]["acc_overall"] == 1.0
     assert out["position_padded_bad"]["acc_overall"] == 1.0
+    assert set(out["validation_by_origin"]) == {"generated"}
     assert out["length"]["n"] == 4 and out["length"]["mean_delta"] == 0.0
     assert PAD  # padding text is shared with the judge module
+
+
+def test_run_check_reports_handwritten_rows_as_their_own_stratum():
+    row = lambda i, q, a, o: {"id": i, "qid": q, "question": "Q", "gold_answer": "G", "answer": a, "origin": o}
+    rows = [row("a1", "q1", "good", "system:x"), row("h1", "q2", "bad", "handwritten:hard")]
+    out = run_check(rows, {"a1": 2, "h1": 2}, lambda p: '{"reason": "", "score": 2}' if "Answer to grade:" in p
+                    else '{"winner": "A"}', workers=1)
+    assert out["validation_by_origin"]["generated"]["n"] == 1
+    assert out["validation_by_origin"]["handwritten"]["n"] == 1
+    assert out["position"] == {"n": 0}

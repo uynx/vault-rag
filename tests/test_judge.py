@@ -1,6 +1,6 @@
 import pytest
 
-from vault_rag.judge import (PAD, judge_prompt, judge_one, length_bias, pad, pair_prompt, parse_score,
+from vault_rag.judge import (PAD, wilson, judge_prompt, judge_one, length_bias, pad, pair_prompt, parse_score,
                              parse_winner, position_bias, validate)
 
 
@@ -72,3 +72,10 @@ def test_length_bias_flags_a_judge_that_scores_by_length():
     r = length_bias(long_is_good, rows)
     assert r["n"] == 3 and r["mean_delta"] == 2.0 and r["pct_raised"] == 1.0
     assert r["wrong_promoted"] == 1.0
+
+
+def test_wilson_interval_for_perfect_agreement_on_forty():
+    lo, hi = wilson(40, 40)
+    assert lo == pytest.approx(0.9124, abs=1e-3) and hi == pytest.approx(1.0)
+    lo, hi = wilson(30, 40)
+    assert lo == pytest.approx(0.5976, abs=2e-3) and hi == pytest.approx(0.858, abs=2e-3)

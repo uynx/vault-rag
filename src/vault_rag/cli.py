@@ -82,6 +82,13 @@ def cmd_labelset(a, embed, llm) -> int:
     return 0
 
 
+def _position_rows(pos: dict, padded: dict) -> list[str]:
+    row = lambda name, p: (f"| {name} | {p['n']} | {p['pick_first_rate']:.3f} | {p['acc_good_first']:.3f} | "
+                           f"{p['acc_good_second']:.3f} | {p['flip_rate']:.3f} |")
+    return ["| | pairs | picks first | right when good is first | right when good is second | verdict flips on swap |",
+            "|---|---:|---:|---:|---:|---:|", row("plain", pos), row("bad answer padded", padded)]
+
+
 def judge_markdown(o: dict) -> str:
     v, pos, padded, ln = o["validation"], o["position"], o["position_padded_bad"], o["length"]
     f = lambda x: "n/a" if x is None else f"{x:.3f}"
@@ -90,14 +97,12 @@ def judge_markdown(o: dict) -> str:
         f"### Judge vs reference labels (n={v['n']})",
         f"- exact agreement {v['agreement']:.3f}, Cohen's kappa (3 classes) {v['kappa_3class']:.3f}",
         f"- binary (fully correct or not): agreement {v['binary_agreement']:.3f}, kappa {v['kappa_binary']:.3f}",
+        f"- 95% Wilson interval on exact agreement: {v['agreement_ci95'][0]:.3f} to {v['agreement_ci95'][1]:.3f}",
         f"- confusion, label to judge score: {json.dumps(v['confusion'], sort_keys=True)}",
+        *[f"- {k} rows only (n={x['n']}): agreement {x['agreement']:.3f}, kappa 3-class {x['kappa_3class']:.3f}, "
+          f"binary kappa {x['kappa_binary']:.3f}" for k, x in o["validation_by_origin"].items()],
         f"\n### Position bias ({o['n_pairs']} good/bad pairs, each judged in both orders)",
-        "| | pairs | picks first | right when good is first | right when good is second | verdict flips on swap |",
-        "|---|---:|---:|---:|---:|---:|",
-        f"| plain | {pos['n']} | {pos['pick_first_rate']:.3f} | {pos['acc_good_first']:.3f} | "
-        f"{pos['acc_good_second']:.3f} | {pos['flip_rate']:.3f} |",
-        f"| bad answer padded | {padded['n']} | {padded['pick_first_rate']:.3f} | {padded['acc_good_first']:.3f} | "
-        f"{padded['acc_good_second']:.3f} | {padded['flip_rate']:.3f} |",
+        *(_position_rows(pos, padded) if pos["n"] else ["no pair has both a fully correct and a wrong answer"]),
         f"\n### Length bias (n={ln['n']}, each answer judged again with about 45 words of filler appended)",
         f"- mean score change {ln['mean_delta']:+.3f}, raised {ln['pct_raised']:.3f}, lowered {ln['pct_lowered']:.3f}, "
         f"wrong or partial answers raised {f(ln['wrong_promoted'])}",

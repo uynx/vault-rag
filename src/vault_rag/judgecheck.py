@@ -15,7 +15,11 @@ def run_check(rows, labels: dict[str, int], llm, workers: int = 8) -> dict:
         bad = [r for r in rs if labels[r["id"]] < 2]
         if good and bad:
             pairs.append((good[0]["question"], good[0]["gold_answer"], good[0]["answer"], bad[0]["answer"]))
-    return {"validation": validate([labels[r["id"]] for r in rows], scores),
+    stratum = lambda r: "handwritten" if r["origin"].startswith("handwritten") else "generated"
+    by_origin = {k: validate([labels[r["id"]] for r, _ in grp], [s for _, s in grp])
+                 for k in ("generated", "handwritten")
+                 if (grp := [(r, s) for r, s in zip(rows, scores) if stratum(r) == k])}
+    return {"validation": validate([labels[r["id"]] for r in rows], scores), "validation_by_origin": by_origin,
             "scores": {r["id"]: s for r, s in zip(rows, scores)}, "n_pairs": len(pairs),
             "position": position_bias(llm, pairs, workers),
             "position_padded_bad": position_bias(llm, [(q, g, good, pad(bad)) for q, g, good, bad in pairs], workers),
