@@ -41,9 +41,16 @@ class Dense:
     def __init__(self, docs: list[str], embed):
         self.embed = embed
         self.vecs = embed(docs)
+        self.queries: dict[str, np.ndarray] = {}
+
+    def warm(self, queries: list[str]) -> None:
+        fresh = [q for q in dict.fromkeys(queries) if q not in self.queries]
+        if fresh:
+            self.queries.update(zip(fresh, self.embed(fresh, query=True)))
 
     def scores(self, query: str) -> np.ndarray:
-        return self.vecs @ self.embed([query], query=True)[0]
+        self.warm([query])
+        return self.vecs @ self.queries[query]
 
 
 def rrf(rankings: list[np.ndarray], k: int = 60) -> np.ndarray:

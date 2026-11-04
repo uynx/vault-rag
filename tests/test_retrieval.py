@@ -70,3 +70,16 @@ def test_rank_notes_dedupes_chunks_in_rank_order():
 def test_unknown_method_is_rejected():
     with pytest.raises(ValueError):
         _retriever().search("x", "tfidf")
+
+
+def test_warm_embeds_all_queries_in_one_batch():
+    calls = []
+
+    def embed(texts, query=False):
+        calls.append((len(texts), query))
+        return np.ones((len(texts), 2), dtype=np.float32)
+
+    d = Dense(["a", "b"], embed)
+    d.warm(["x", "y", "x"])
+    d.scores("x"), d.scores("y")
+    assert calls == [(2, False), (2, True)]
