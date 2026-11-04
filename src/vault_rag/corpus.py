@@ -30,6 +30,9 @@ def _sections(lines: list[str]) -> tuple[str, list[tuple[str, list[str]]]]:
         else:
             body.append(ln)
     sections.append((head, body))
+    if len(sections) > 1 and not sections[0][0]:
+        sections[1] = (sections[1][0], sections[0][1] + sections[1][1])
+        sections = sections[1:]
     return title, [(h, b) for h, b in sections if b]
 
 

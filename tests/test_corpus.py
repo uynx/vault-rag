@@ -46,3 +46,13 @@ def test_load_corpus_uses_file_stem_as_note_id(tmp_path):
     (tmp_path / "skip.txt").write_text("ignored")
     chunks = load_corpus(tmp_path)
     assert {c.note for c in chunks} == {"one"}
+
+
+def test_tagline_under_the_title_shares_a_chunk_with_the_first_section():
+    chunks = chunk_note("tide_mill", NOTE)
+    assert len(chunks) == 1
+    assert "A mill on the estuary." in chunks[0].text and "40 kg of barley" in chunks[0].text
+
+
+def test_note_with_only_a_tagline_still_yields_a_chunk():
+    assert [c.text for c in chunk_note("stub", "# Stub\nJust a tagline.\n")] == ["Stub\nJust a tagline."]
