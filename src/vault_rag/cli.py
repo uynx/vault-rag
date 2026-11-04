@@ -8,22 +8,23 @@ from .evalrun import answer_metrics, load_questions, markdown_table, retrieval_m
 from .judgecheck import run_check
 from .labelset import build_labelset
 from .llm import cached, claude_llm
+from .questiongen import generate_questions
 from .metrics import regressions
 from .retrieval import METHODS, Retriever
 
 MODEL = "sonnet"
 
 
-def _retriever(corpus, embed):
+def _retriever(corpus, embed, exclude=""):
     if embed is None:
         from .embed import FastEmbedder
 
         embed = FastEmbedder()
-    return Retriever(load_corpus(corpus), embed)
+    return Retriever(load_corpus(corpus, exclude=tuple(x for x in exclude.split(',') if x)), embed)
 
 
 def cmd_eval(a, embed, llm) -> int:
-    r = _retriever(a.corpus, embed)
+    r = _retriever(a.corpus, embed, a.exclude)
     qs = load_questions(a.questions)
     ret = retrieval_metrics(r, qs)
     current = {f"retrieval/{m}": v for m, v in ret["overall"].items()}
@@ -74,8 +75,17 @@ def _read_jsonl(path) -> list[dict]:
     return [json.loads(ln) for ln in Path(path).read_text().splitlines() if ln.strip()]
 
 
+def cmd_genquestions(a, embed, llm) -> int:
+    chunks = load_corpus(a.corpus, exclude=tuple(x for x in a.exclude.split(",") if x))
+    qs = generate_questions(chunks, _llm(a, llm), a.n, a.seed, a.workers)
+    Path(a.questions).parent.mkdir(parents=True, exist_ok=True)
+    Path(a.questions).write_text("".join(json.dumps(q, ensure_ascii=False) + "\n" for q in qs))
+    print(f"wrote {len(qs)} model-written questions to {a.questions}")
+    return 0
+
+
 def cmd_labelset(a, embed, llm) -> int:
-    rows = build_labelset(_retriever(a.corpus, embed), load_questions(a.questions), _llm(a, llm),
+    rows = build_labelset(_retriever(a.corpus, embed, a.exclude), load_questions(a.questions), _llm(a, llm),
                           a.n_pairs, a.n_weak, a.seed, a.workers)
     Path(a.labelset).write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
     print(f"wrote {len(rows)} answers to {a.labelset}; label them in {a.labels} before running judge-check")
@@ -130,6 +140,7 @@ def parser() -> argparse.ArgumentParser:
     common = argparse.ArgumentParser(add_help=False)
     common.add_argument("--corpus", default="demo/corpus")
     common.add_argument("--questions", default="demo/questions.jsonl")
+    common.add_argument("--exclude", default="", help="comma-separated directory names to skip")
     common.add_argument("--baseline", default="results/baseline.json")
     common.add_argument("--out", default="results")
     common.add_argument("--cache", default="demo/cache")
@@ -144,6 +155,9 @@ def parser() -> argparse.ArgumentParser:
     e = sub.add_parser("eval", parents=[common], help="retrieval and answer metrics, results table, baseline gate")
     e.add_argument("--answers", action="store_true", help="also generate and judge answers")
     e.add_argument("-k", type=int, default=5)
+    g = sub.add_parser("genquestions", parents=[common], help="have claude write one question per sampled chunk")
+    g.add_argument("--n", type=int, default=60)
+    g.add_argument("--seed", type=int, default=7)
     ls = sub.add_parser("labelset", parents=[common], help="build the pool of answers to label by hand")
     ls.add_argument("--n-pairs", type=int, default=16)
     ls.add_argument("--n-weak", type=int, default=8)
@@ -154,7 +168,7 @@ def parser() -> argparse.ArgumentParser:
 
 def main(argv=None, embed=None, llm=None) -> int:
     a = parser().parse_args(argv)
-    return {"eval": cmd_eval, "labelset": cmd_labelset, "judge-check": cmd_judge_check}[a.cmd](a, embed, llm)
+    return {"eval": cmd_eval, "genquestions": cmd_genquestions, "labelset": cmd_labelset, "judge-check": cmd_judge_check}[a.cmd](a, embed, llm)
 
 
 if __name__ == "__main__":

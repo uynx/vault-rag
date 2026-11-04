@@ -52,5 +52,6 @@ def chunk_note(note: str, raw: str, max_words: int = 180, overlap: int = 30) -> 
     return chunks
 
 
-def load_corpus(root: Path, **kw) -> list[Chunk]:
-    return [c for p in sorted(Path(root).rglob("*.md")) for c in chunk_note(p.stem, p.read_text(), **kw)]
+def load_corpus(root: Path, exclude: tuple[str, ...] = (), **kw) -> list[Chunk]:
+    paths = [p for p in sorted(Path(root).rglob("*.md")) if not set(p.relative_to(root).parts[:-1]) & set(exclude)]
+    return [c for p in paths for c in chunk_note(p.stem, p.read_text(), **kw)]

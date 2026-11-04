@@ -53,3 +53,17 @@ def test_judge_markdown_survives_a_run_with_no_pairs():
                                                       "wrong_promoted": None, "spearman_len_score": None,
                                                       "spearman_within_label": {}}}
     assert "no pair has both" in judge_markdown(out)
+
+
+def test_genquestions_writes_questions_the_eval_can_read(vault):
+    from vault_rag.evalrun import load_questions
+
+    notes = vault / "corpus"
+    (notes / "long.md").write_text("# Long\n## S\n" + " ".join(f"w{i}" for i in range(90)) + "\n")
+    out = vault / "gen.jsonl"
+    argv = ["genquestions", "--corpus", str(notes), "--questions", str(out), "--cache", str(vault / "c"),
+            "--n", "5", "--workers", "1"]
+    q = lambda p: '{"question": "What?", "answer": "Words."}'
+    assert main(argv, embed=fake_embed, llm=q) == 0
+    qs = load_questions(out)
+    assert [x["gold_sources"] for x in qs] == [["long"]]
