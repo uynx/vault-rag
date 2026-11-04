@@ -15,16 +15,16 @@ from .retrieval import METHODS, Retriever
 MODEL = "sonnet"
 
 
-def _retriever(corpus, embed, exclude=""):
+def _retriever(a, embed):
     if embed is None:
         from .embed import FastEmbedder
 
-        embed = FastEmbedder()
-    return Retriever(load_corpus(corpus, exclude=tuple(x for x in exclude.split(',') if x)), embed)
+        embed = FastEmbedder(vectors=Path(a.cache) / "vectors", offline=a.offline)
+    return Retriever(load_corpus(a.corpus, exclude=tuple(x for x in a.exclude.split(",") if x)), embed)
 
 
 def cmd_eval(a, embed, llm) -> int:
-    r = _retriever(a.corpus, embed, a.exclude)
+    r = _retriever(a, embed)
     qs = load_questions(a.questions)
     ret = retrieval_metrics(r, qs)
     current = {f"retrieval/{m}": v for m, v in ret["overall"].items()}
@@ -85,7 +85,7 @@ def cmd_genquestions(a, embed, llm) -> int:
 
 
 def cmd_labelset(a, embed, llm) -> int:
-    rows = build_labelset(_retriever(a.corpus, embed, a.exclude), load_questions(a.questions), _llm(a, llm),
+    rows = build_labelset(_retriever(a, embed), load_questions(a.questions), _llm(a, llm),
                           a.n_pairs, a.n_weak, a.seed, a.workers)
     Path(a.labelset).write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
     print(f"wrote {len(rows)} answers to {a.labelset}; label them in {a.labels} before running judge-check")
