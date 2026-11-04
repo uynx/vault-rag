@@ -3,6 +3,7 @@ import json
 import sys
 from pathlib import Path
 
+from .answer import build_prompt, cited_indices
 from .corpus import load_corpus
 from .evalrun import answer_metrics, load_questions, markdown_table, retrieval_metrics
 from .judgecheck import run_check
@@ -73,6 +74,16 @@ def _llm(a, llm):
 
 def _read_jsonl(path) -> list[dict]:
     return [json.loads(ln) for ln in Path(path).read_text().splitlines() if ln.strip()]
+
+
+def cmd_ask(a, embed, llm) -> int:
+    r = _retriever(a, embed)
+    chunks = r.search(a.question, a.method, a.k)
+    text = _llm(a, llm)(build_prompt(a.question, chunks))
+    print(text, "\n\nSources:")
+    for i in cited_indices(text, len(chunks)):
+        print(f"[{i}] {chunks[i - 1].note}: {chunks[i - 1].text[:200]!r}")
+    return 0
 
 
 def cmd_genquestions(a, embed, llm) -> int:
@@ -155,6 +166,10 @@ def parser() -> argparse.ArgumentParser:
     e = sub.add_parser("eval", parents=[common], help="retrieval and answer metrics, results table, baseline gate")
     e.add_argument("--answers", action="store_true", help="also generate and judge answers")
     e.add_argument("-k", type=int, default=5)
+    ask = sub.add_parser("ask", parents=[common], help="answer one question with cited chunks")
+    ask.add_argument("question")
+    ask.add_argument("--method", default="hybrid", choices=METHODS)
+    ask.add_argument("-k", type=int, default=5)
     g = sub.add_parser("genquestions", parents=[common], help="have claude write one question per sampled chunk")
     g.add_argument("--n", type=int, default=60)
     g.add_argument("--seed", type=int, default=7)
@@ -168,7 +183,7 @@ def parser() -> argparse.ArgumentParser:
 
 def main(argv=None, embed=None, llm=None) -> int:
     a = parser().parse_args(argv)
-    return {"eval": cmd_eval, "genquestions": cmd_genquestions, "labelset": cmd_labelset, "judge-check": cmd_judge_check}[a.cmd](a, embed, llm)
+    return {"eval": cmd_eval, "ask": cmd_ask, "genquestions": cmd_genquestions, "labelset": cmd_labelset, "judge-check": cmd_judge_check}[a.cmd](a, embed, llm)
 
 
 if __name__ == "__main__":

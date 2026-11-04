@@ -67,3 +67,12 @@ def test_genquestions_writes_questions_the_eval_can_read(vault):
     assert main(argv, embed=fake_embed, llm=q) == 0
     qs = load_questions(out)
     assert [x["gold_sources"] for x in qs] == [["long"]]
+
+
+def test_ask_prints_the_answer_and_the_cited_chunks(vault, capsys):
+    argv = ["ask", "how many tonnes does the Gannet haul", "--corpus", str(vault / "corpus"),
+            "--cache", str(vault / "c"), "--method", "bm25", "-k", "2"]
+    assert main(argv, embed=fake_embed, llm=lambda p: "Two tonnes [1].") == 0
+    out = capsys.readouterr().out
+    assert "Two tonnes [1]." in out
+    assert "[1] boats" in out and "The Gannet hauls two tonnes per trip" in out
