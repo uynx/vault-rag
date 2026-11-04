@@ -1,0 +1,40 @@
+{"id": "l01", "label": 2, "labeler": "claude-agent", "note": ""}
+{"id": "l02", "label": 2, "labeler": "claude-agent", "note": ""}
+{"id": "l03", "label": 0, "labeler": "claude-agent", "note": "refusal"}
+{"id": "l04", "label": 1, "labeler": "claude-agent", "note": "right lines, wrong location (deeper, notes say shallower)"}
+{"id": "l05", "label": 2, "labeler": "claude-agent", "note": ""}
+{"id": "l06", "label": 1, "labeler": "claude-agent", "note": ""}
+{"id": "l07", "label": 2, "labeler": "claude-agent", "note": "extra detail is in the notes"}
+{"id": "l08", "label": 2, "labeler": "claude-agent", "note": "extra details are in the notes"}
+{"id": "l09", "label": 1, "labeler": "claude-agent", "note": ""}
+{"id": "l10", "label": 2, "labeler": "claude-agent", "note": ""}
+{"id": "l11", "label": 0, "labeler": "claude-agent", "note": "refusal"}
+{"id": "l12", "label": 2, "labeler": "claude-agent", "note": ""}
+{"id": "l13", "label": 2, "labeler": "claude-agent", "note": ""}
+{"id": "l14", "label": 0, "labeler": "claude-agent", "note": "refusal"}
+{"id": "l15", "label": 1, "labeler": "claude-agent", "note": "right bloom and tanks, four batches instead of three"}
+{"id": "l16", "label": 0, "labeler": "claude-agent", "note": "the whole answer is the wrong number"}
+{"id": "l17", "label": 1, "labeler": "claude-agent", "note": "reseeded from an isolated tank is right, tank 5 instead of tank 2"}
+{"id": "l18", "label": 0, "labeler": "claude-agent", "note": "the whole answer is the wrong number"}
+{"id": "l19", "label": 0, "labeler": "claude-agent", "note": "refusal"}
+{"id": "l20", "label": 2, "labeler": "claude-agent", "note": ""}
+{"id": "l21", "label": 2, "labeler": "claude-agent", "note": ""}
+{"id": "l22", "label": 1, "labeler": "claude-agent", "note": ""}
+{"id": "l23", "label": 0, "labeler": "claude-agent", "note": "refusal"}
+{"id": "l24", "label": 1, "labeler": "claude-agent", "note": "weight right, pull rating missing"}
+{"id": "l25", "label": 2, "labeler": "claude-agent", "note": ""}
+{"id": "l26", "label": 1, "labeler": "claude-agent", "note": ""}
+{"id": "l27", "label": 1, "labeler": "claude-agent", "note": ""}
+{"id": "l28", "label": 1, "labeler": "claude-agent", "note": ""}
+{"id": "l29", "label": 1, "labeler": "claude-agent", "note": ""}
+{"id": "l30", "label": 0, "labeler": "claude-agent", "note": "refusal"}
+{"id": "l31", "label": 0, "labeler": "claude-agent", "note": "the whole answer is the wrong number"}
+{"id": "l32", "label": 2, "labeler": "claude-agent", "note": ""}
+{"id": "l33", "label": 2, "labeler": "claude-agent", "note": ""}
+{"id": "l34", "label": 0, "labeler": "claude-agent", "note": "refusal"}
+{"id": "l35", "label": 2, "labeler": "claude-agent", "note": ""}
+{"id": "l36", "label": 2, "labeler": "claude-agent", "note": ""}
+{"id": "l37", "label": 1, "labeler": "claude-agent", "note": ""}
+{"id": "l38", "label": 2, "labeler": "claude-agent", "note": "extra loan terms are in the finances note"}
+{"id": "l39", "label": 0, "labeler": "claude-agent", "note": "refusal"}
+{"id": "l40", "label": 1, "labeler": "claude-agent", "note": ""}
