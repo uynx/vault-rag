@@ -1,0 +1,10 @@
+.direnv
+.devenv
+result
+.env
+.env.local
+.venv
+__pycache__
+.cache
+local/
+*.pyc
