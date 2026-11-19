@@ -98,7 +98,7 @@ I ran the same harness on my private notes vault (384 notes, 2,701 chunks). Only
 | dense | 0.750 | 0.938 | 0.938 | 0.841 | 0.775 | 0.887 |
 | hybrid | 0.812 | 0.988 | 0.988 | 0.893 | 0.863 | 0.975 |
 
-The order flips from the demo: bm25 is best on recall@1 and on fully correct answers, and dense is worst. I think the questions are the reason. Claude wrote each one while looking at its chunk and probably reused words from it even though I told it not to copy more than three in a row, which helps bm25. With 80 questions and a vault that changes as I write in it, I would not read more into the ordering than that. At 2,732 chunks, retrieval took about 1.7 ms per query for bm25, 14 ms for dense and 12 ms for hybrid. The machine was at load 22 on 8 cores, and the dense figure used random vectors, so it times the matrix product and not the model.
+The order flips from the demo: bm25 is best on recall@1 and on fully correct answers, and dense is worst. I think the questions are the reason. Claude wrote each one while looking at its chunk and probably reused words from it even though I told it not to copy more than three in a row, which helps bm25. With 80 questions and a vault that changes as I write in it, I would not read more into the ordering than that. On a later timing run (when the vault had grown to 2,732 chunks), retrieval took about 1.7 ms per query for bm25, 14 ms for dense and 12 ms for hybrid. The machine was at load 22 on 8 cores, and the dense figure used random vectors, so it times the matrix product and not the model.
 
 ## Limits
 
