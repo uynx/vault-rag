@@ -7,6 +7,24 @@ def test_claude_llm_pipes_prompt_to_command_stdin():
     assert claude_llm("hello there", cmd=["cat"]) == "hello there"
 
 
+def test_claude_llm_uses_once_ts_when_assistant_dir_is_set(tmp_path, monkeypatch):
+    once = tmp_path / "once.ts"
+    once.write_text("")
+    monkeypatch.setenv("ASSISTANT_DIR", str(tmp_path))
+    monkeypatch.delenv("VAULT_RAG_LLM_CMD", raising=False)
+    from vault_rag.llm import default_cmd
+    cmd = default_cmd()
+    assert cmd[:2] == ["bun", str(once)]
+    assert "-p" not in cmd
+
+
+def test_claude_llm_passes_prompt_as_arg_for_once_ts(tmp_path):
+    fake = tmp_path / "once.ts"
+    fake.write_text("#!/bin/sh\necho \"$1\"\n")
+    fake.chmod(0o755)
+    assert claude_llm("hello once", cmd=[str(fake)]) == "hello once"
+
+
 def test_claude_llm_raises_on_nonzero_exit():
     with pytest.raises(RuntimeError):
         claude_llm("x", cmd=["false"])
